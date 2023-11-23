@@ -1,0 +1,93 @@
+﻿@model Simpoll.Models.Sondage
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Liens</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body class="jolie">
+    <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <div class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 text-light" type="submit">Search</button>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light">Sign In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light">|</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light">Sign Out</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="container">
+        <a href="/Simpoll/CreationUtilisateur"><img src="/Content/simpoll.png" alt="Logo Simpoll" /></a>
+    </header>
+    <section class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Attention !</h1>
+                <p class="lead">Garder précieusement le lien pour désactiver le sondage.</p>
+            </div>
+        </div>    
+            <div class="form-group row">
+                <label for="URLSuppression" class="col-sm-2 col-form-label">Désactiver le sondage </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control col-lg-8" value="@Model.UrlSuppression">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="URLPartage" class="col-sm-2 col-form-label">Partager le sondage </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control col-lg-8" value="@Model.UrlPartage">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="URLResultat" class="col-sm-2 col-form-label">Accéder aux résultats</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control col-lg-8" value="@Model.UrlResultat">
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <a href="/Partage/Vote/@Model.IdSondage" class="btn btn-block btn-primary" role="button">Votez</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="/Partage/Resultat/@Model.IdSondage" type="button" class="btn btn-block btn-primary" role="button">Résultats</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="/Partage/DesactiverSondage/@Model.Guid" class="btn btn-block btn-danger justify-content-end" role="button">Désactiver</a>
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="/Simpoll/CreationUtilisateur" type="button" class="btn btn-block btn-dark">Page d'accueil</></a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer></footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
